@@ -1,0 +1,100 @@
+{{> header.handlebars}}
+
+<!-- private int questionId;
+    private String questionText;
+    private String questionBody;
+    private int correctAnswers;
+    private String[] questionOptions;
+    private boolean multipleAnswers;
+  -->
+
+<main role="main" class="">
+    <div class="container">
+        <form action="/add/question" method="post">
+            <div class="form-group row">
+                <label for="question-text" class="col-sm-2 col-form-label">Question Text</label>
+                <div class="col-sm-10">
+                    <input type="text" name="question-text" class="form-control" id="question-text" placeholder="Question Description">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="question-body" class="col-sm-2 col-form-label">Question Body</label>
+                <div class="col-sm-10">
+                    <textarea type="text" name="question-body" class="form-control" id="question-body" placeholder="Code Snippet"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="question-body" class="col-sm-2 col-form-label">Answer Type</label>
+                <div class="input-group col-lg-5">
+                    <input type="text" id="multiple-answers" name="multiple-answers" aria-label="Multiple answers" class="form-control" placeholder="Are there multiple correct answers?">
+                </div>
+                <div class="input-group col-lg-5">
+                    <input type="text" id="correct-answers" name="correct-answers" aria-label="Correct answers" class="form-control" placeholder="Number of correct questions">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="option-one" class="col-sm-2 col-form-label">Option One</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-one" name="option-one" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="option-two" class="col-sm-2 col-form-label">Option Two</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-two" name="option-two" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="option-three" class="col-sm-2 col-form-label">Option Three</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-three" name="option-three" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="option-four" class="col-sm-2 col-form-label">Option Four</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-four" name="option-four" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            <!--           x    -->
+            <div class="form-group row">
+                <label for="option-five" class="col-sm-2 col-form-label">Option Five</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-five" name="option-five" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="option-six" class="col-sm-2 col-form-label">Option Six</label>
+                <div class="input-group col-lg-10">
+                    <input type="text" id="option-six" name="option-six" aria-label="" class="form-control" placeholder="Potential Answer Text">
+                </div>
+            </div>
+            {{#if added}}
+                <div class="alert alert-success" role="alert">
+                    {{success}}
+                </div>
+            {{/if}}
+            <div class="mt-5">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Add Question</button>
+            </div>
+
+
+            <!--            <div class="">-->
+            <!--                <input class="form-check-input" type="radio" name="multiple-answers" id="multiple-answers" value="f">-->
+            <!--                <label class="form-check-label" for="multiple-answers">-->
+            <!--                    Single Answer-->
+            <!--                </label>-->
+            <!--            </div>-->
+            <!--            <div class="">-->
+            <!--                <input class="form-check-input" type="radio" name="multiple-answers" id="multiple-answers" value="t">-->
+            <!--                <label class="form-check-label" for="multiple-answers">-->
+            <!--                    Multiple Answers-->
+            <!--                </label>-->
+            <!--            </div>-->
+        </form>
+    </div>
+</main>
+
+
+</body>
+</html>

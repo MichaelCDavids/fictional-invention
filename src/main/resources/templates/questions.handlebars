@@ -1,0 +1,109 @@
+{{> header.handlebars}}
+<main role="main" class="expand">
+    <div class="container">
+        <div class="">
+            <div class="row">
+                <div class="col-12 d-sm-block d-md-none mb-3">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Java Basics</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">OO Concepts</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Datatypes</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Garbage Collection</a>
+                        <a class="list-group-item list-group-item-action" id="list-decision-constructs-list" data-toggle="list" href="#list-decision-constructs" role="tab" aria-controls="decisions">Decision Constructs</a>
+                        <a class="list-group-item list-group-item-action" id="list-operators-list" data-toggle="list" href="#list-operators" role="tab" aria-controls="operators">Operators</a>
+                        <a class="list-group-item list-group-item-action" id="list-arrays-list" data-toggle="list" href="#list-arrays" role="tab" aria-controls="arrays">Arrays</a>
+                        <a class="list-group-item list-group-item-action" id="list-loops-list" data-toggle="list" href="#list-loops" role="tab" aria-controls="loops">Loops</a>
+                        <a class="list-group-item list-group-item-action" id="list-inheritance-list" data-toggle="list" href="#list-inheritance" role="tab" aria-controls="inheritance">Inheritance</a>
+                        <a class="list-group-item list-group-item-action" id="list-exceptions-list" data-toggle="list" href="#list-exceptions" role="tab" aria-controls="exceptions">Exceptions</a>
+                        <a class="list-group-item list-group-item-action" id="list-lambda-list" data-toggle="list" href="#list-lambda" role="tab" aria-controls="lambdas">Lambda</a>
+                    </div>
+                </div>
+
+                <div class="col-2 d-none d-lg-block ">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Java Basics</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">OO Concepts</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Datatypes</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Garbage Collection</a>
+                        <a class="list-group-item list-group-item-action" id="list-decision-constructs-list" data-toggle="list" href="#list-decision-constructs" role="tab" aria-controls="decisions">Decision Constructs</a>
+                        <a class="list-group-item list-group-item-action" id="list-operators-list" data-toggle="list" href="#list-operators" role="tab" aria-controls="operators">Operators</a>
+                        <a class="list-group-item list-group-item-action" id="list-arrays-list" data-toggle="list" href="#list-arrays" role="tab" aria-controls="arrays">Arrays</a>
+                        <a class="list-group-item list-group-item-action" id="list-loops-list" data-toggle="list" href="#list-loops" role="tab" aria-controls="loops">Loops</a>
+                        <a class="list-group-item list-group-item-action" id="list-inheritance-list" data-toggle="list" href="#list-inheritance" role="tab" aria-controls="inheritance">Inheritance</a>
+                        <a class="list-group-item list-group-item-action" id="list-exceptions-list" data-toggle="list" href="#list-exceptions" role="tab" aria-controls="exceptions">Exceptions</a>
+                        <a class="list-group-item list-group-item-action" id="list-lambda-list" data-toggle="list" href="#list-lambda" role="tab" aria-controls="lambdas">Lambda</a>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                            <h1>Java Basics</h1>
+                            {{#each questions}}
+                                <div class="card text-left mb-5">
+                                    <div class="card-header">
+                                        question id:{{questionId}} {{questionText}}
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{{questionBody}}</p>
+                                        {{#if multipleAnswers}}
+                                            {{#each questionOptions}}
+                                                <li>
+                                                    <input type="checkbox"> {{this}}
+                                                </li>
+                                            {{/each}}
+                                        {{else}}
+                                            {{#each questionOptions}}
+                                                <li>
+                                                    <input type="radio" id="answer" name="answer"
+                                                           value="{{this}}"> {{this}}
+                                                </li>
+                                            {{/each}}
+                                        {{/if}}
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        Choose {{correctAnswers}} option(s)
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                            <h1>OO Concepts</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                            <h1>Datatypes</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                            <h1>Garbage Collection</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-decision-constructs" role="tabpanel" aria-labelledby="list-decision-constructs-list">
+                            <h1>Decision Constructs</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-operators" role="tabpanel" aria-labelledby="list-operators-list">
+                            <h1>Operators</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-arrays" role="tabpanel" aria-labelledby="list-arrays-list">
+                            <h1>Arrays</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-loops" role="tabpanel" aria-labelledby="list-loops-list">
+                            <h1>Loops</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-inheritance" role="tabpanel" aria-labelledby="list-inheritance-list">
+                            <h1>Inheritance</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-exceptions" role="tabpanel" aria-labelledby="list-exceptions-list">
+                            <h1>Exceptions</h1>
+                        </div>
+                        <div class="tab-pane fade" id="list-lambda" role="tabpanel" aria-labelledby="list-lambda-list">
+                            <h1>Lambda Expressions</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>
